@@ -1,0 +1,41 @@
+﻿@model ProjetoNugets.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Clientes";
+
+}
+
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+
+   
+
+        <div>
+            <form asp-action="Edit" asp-controller="Cliente" method="post">
+                <div>
+                    <label>Nome</label>
+                    <input asp-for="@Model.Nome" />
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <input asp-for="@Model.Email" />
+                </div>
+
+                <div>
+                    <label>Telefone</label>
+                    <input asp-for="@Model.DataCadastro" />
+                </div>
+
+                <div>
+                    <label>Presenca</label>
+                    <input asp-for="@Model.Ativo" />
+                </div>
+
+                <div>
+                    
+                    <button asp-route-id="@Model.Id">Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,39 @@
+﻿@model Cliente
+
+@{
+    ViewData["Title"] = "Cadastro de Clientes";
+}
+
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+
+        @Html.AntiForgeryToken();
+
+        <div>
+            <form asp-action="Create" asp-controller="Cliente" method="post">
+                <div>
+                    <label>Nome</label>
+                    <input asp-for="@Model.Nome" />
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <input asp-for="@Model.Email" />
+                </div>
+
+                <div>
+                    <label>Telefone</label>
+                    <input asp-for="@Model.DataCadastro" />
+                </div>
+
+                <div>
+                    <label>Presenca</label>
+                    <input asp-for="@Model.Ativo" />
+                </div>
+
+                <div>
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>

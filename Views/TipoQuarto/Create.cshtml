@@ -1,0 +1,73 @@
+﻿@model Preco
+
+@{
+    ViewData["Title"] = "Cadastro ";
+}
+
+@Html.AntiForgeryToken();
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Cadastrar Tipo de Quarto</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Cadastro Tipo de Quarto</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row px-auto mx-auto">
+            <!-- left column -->
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Preencha o formulário</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-action="Create" asp-controller="TipoQuarto" method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Preço</label>
+                                <input asp-for="ValorPreco">
+                                <span asp-validation-for="ValorPreco" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Data Início</label>
+                                <input asp-for="Inicio">
+                                <span asp-validation-for="Inicio" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Data Fim</label>
+                                <input asp-for="Fim">
+                                <span asp-validation-for="Fim" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submeter</button>
+                            <a asp-controller="TipoQuarto" asp-action="Index" class="btn btn-primary">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
