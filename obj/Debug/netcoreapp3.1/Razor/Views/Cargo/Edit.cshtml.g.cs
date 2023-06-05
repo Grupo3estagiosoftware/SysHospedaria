@@ -20,21 +20,21 @@ using ProjetoNugets;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Nelson João\Source\Repos\SysHospedaria\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Nelson João\Source\Repos\SysHospedaria\Views\_ViewImports.cshtml"
 using ProjetoNugets.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Nelson João\Source\Repos\SysHospedaria\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Nelson João\Source\Repos\SysHospedaria\Views\_ViewImports.cshtml"
 using ProjetoNugets.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b1ba16f7c44db94002fffdb8c46a11f90aa48939", @"/Views/Cargo/Edit.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bde73ca29861b955e4dccf92f04376ebbcfac2c9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1d7b0d876e3c24a18c68c4edc1cb6154cdba1a88", @"/Views/_ViewImports.cshtml")]
     public class Views_Cargo_Edit : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Cargo>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

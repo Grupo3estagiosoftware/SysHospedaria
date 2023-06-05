@@ -37,6 +37,7 @@ namespace ProjetoNugets
             services.AddTransient<IQuartoRepository, QuartoRepository>();
             services.AddTransient<ITipoQuartoRepository, TipoQuartoRepository>();
             services.AddTransient<IReservaRepository, ReservaRepository>();
+            services.AddTransient<ICheckRepository, CheckRepository>();
             services.AddControllersWithViews(); 
         }
 
