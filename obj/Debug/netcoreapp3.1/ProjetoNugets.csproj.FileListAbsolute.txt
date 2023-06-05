@@ -422,3 +422,6 @@ C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Projeto
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\ProjetoNugets.dll
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\ProjetoNugets.pdb
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\ProjetoNugets.genruntimeconfig.cache
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Create.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Edit.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Index.cshtml.g.cs

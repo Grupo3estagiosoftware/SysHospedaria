@@ -7,5 +7,6 @@ namespace ProjetoNugets.Models
 {
     public class Checkin
     {
+
     }
 }

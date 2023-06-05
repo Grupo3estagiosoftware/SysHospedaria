@@ -20,5 +20,6 @@ namespace ProjetoNugets.Models
 
         public DbSet<Preco> Precos { get; set; }
         public DbSet<Quarto> Quartos { get; set; }
+        public DbSet<Reserva> Reserva { get; set; }
     }
 }

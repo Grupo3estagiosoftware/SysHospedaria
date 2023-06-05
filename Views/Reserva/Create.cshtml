@@ -1,0 +1,84 @@
+﻿@model ReservaVM
+
+@{
+    ViewData["Title"] = "Efectuar Reserva";
+}
+
+@Html.AntiForgeryToken();
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Efectuar Reserva</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Efectuar Reserva</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row px-auto mx-auto">
+            <!-- left column -->
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Preencha o formulário</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-action="Create" asp-controller="Reserva" method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Data de Entrada</label>
+                                <input asp-for="Reserva.DataEntrada">
+                                <span asp-validation-for="Reserva.DataEntrada" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Data Saida</label>
+                                <input asp-for="Reserva.DataSaida">
+                                <span asp-validation-for="Reserva.DataSaida" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @Html.DropDownListFor(m => m.Reserva.HospedeId, Model.HospedeList, "-Selecionar o hospede",
+                                new { @class = "form-control" })
+                                <span asp-validation-for="Reserva.HospedeId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @Html.DropDownListFor(m => m.Reserva.QuartoId, Model.QuartoList, "-Selecionar o quarto",
+                             new { @class = "form-control" })
+                                <span asp-validation-for="Reserva.QuartoId" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Número de pessoas</label>
+                                <input asp-for="Reserva.NumPessoas">
+                                <span asp-validation-for="Reserva.NumPessoas" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submeter</button>
+                            <a asp-controller="Reserva" asp-action="Index" class="btn btn-primary">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
