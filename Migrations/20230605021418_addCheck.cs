@@ -18,17 +18,17 @@ namespace ProjetoNugets.Migrations
                     Checkin = table.Column<bool>(nullable: false),
                     Chechout = table.Column<bool>(nullable: false),
                     ReservaId = table.Column<int>(nullable: false),
-                    FuncionarioId = table.Column<int>(nullable: false)
+                    //FuncionarioId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Check", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Check_Funcionarios_FuncionarioId",
-                        column: x => x.FuncionarioId,
-                        principalTable: "Funcionarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    //table.ForeignKey(
+                    //    name: "FK_Check_Funcionarios_FuncionarioId",
+                    //    column: x => x.FuncionarioId,
+                    //    principalTable: "Funcionarios",
+                    //    principalColumn: "Id",
+                    //    onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Check_Reserva_ReservaId",
                         column: x => x.ReservaId,
@@ -37,10 +37,10 @@ namespace ProjetoNugets.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Check_FuncionarioId",
-                table: "Check",
-                column: "FuncionarioId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Check_FuncionarioId",
+            //    table: "Check",
+            //    column: "FuncionarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Check_ReservaId",

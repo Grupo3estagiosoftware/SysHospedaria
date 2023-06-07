@@ -18,16 +18,18 @@ namespace ProjetoNugets.Controllers
         private readonly IReservaRepository _Reserva;
         private readonly IHospedeRepository _Hospede;
         private readonly IQuartoRepository _Quarto;
+        private readonly ICheckRepository _Check;
 
-        public ReservaController(IReservaRepository Reserva, IQuartoRepository Quarto, IHospedeRepository Hospede)
+        public ReservaController(IReservaRepository Reserva, IQuartoRepository Quarto, IHospedeRepository Hospede, ICheckRepository Check)
         {
             _Reserva = Reserva;
             _Hospede = Hospede;
             _Quarto = Quarto;
+            _Check = Check;
         }
         public IActionResult Index()
         {
-            var ReservaResult = _Reserva.GetAll(includeProperties: "Hospede,Quarto").Where(ex=>ex.Estado);
+            var ReservaResult = _Reserva.GetAll(includeProperties: "Hospede,Quarto").Where(ex => ex.Estado == false).ToList();
             return View(ReservaResult);
         }
 
@@ -99,10 +101,38 @@ namespace ProjetoNugets.Controllers
         //            _Reserva.Update(Reserva);
         //            return RedirectToAction("Index");
         //        }
-                
+
         //    }
         //    return View(Reserva);
         //}
+
+       
+        public IActionResult Checkin(int id)
+        {
+                var resultReserva = _Reserva.GetAll(includeProperties: "Quarto.Preco").Where(ex=>ex.Id == id).FirstOrDefault();
+                if (resultReserva != null)
+                {
+                    resultReserva.Estado = true;
+                    _Reserva.Update(resultReserva);
+
+                    _Check.Add(new Check() { Data = DateTime.Now, Checkin = true, Valor = resultReserva.Quarto.Preco.ValorPreco, ReservaId = id});
+                   
+                } 
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Checkout(int id)
+        {
+            var resultReserva = _Check.Get(id);
+            if (resultReserva != null)
+            {
+                resultReserva.Chechout = true;
+                resultReserva.Checkin = false;
+                _Check.Update(resultReserva);
+
+            }
+            return RedirectToAction("Checkout","Check");
+        }
 
         public IActionResult Delete(int id)
         {

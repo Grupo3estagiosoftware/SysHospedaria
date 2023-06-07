@@ -21,6 +21,7 @@ namespace ProjetoNugets.Controllers
         {
             _Funcionario = Funcionario;
             _Cargo = Cargo;
+            
         }
         public IActionResult Index()
         {

@@ -13,6 +13,7 @@ namespace ProjetoNugets.Models
         
         }
 
+
         //public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Hospede> Hospedes { get; set; }
         public DbSet<Cargo> Cargos { get; set; }

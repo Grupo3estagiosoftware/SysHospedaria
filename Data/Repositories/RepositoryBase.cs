@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoNugets.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : /*IDisposable,*/ IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
        private readonly AppDbContext _db;
         internal DbSet<TEntity> dbSet;
@@ -32,6 +32,9 @@ namespace ProjetoNugets.Data.Repositories
 
         public TEntity Get(int id)
         {
+            //var data = dbSet?.Where(s => s.Id == id).AsNoTracking().SingleOrDefault();
+            //return data ?? default;
+
             return dbSet.Find(id);
         }
 
@@ -75,11 +78,15 @@ namespace ProjetoNugets.Data.Repositories
 
         public void Update(TEntity obj)
         {
-            //_db.Entry(obj).Property("Descricao").IsModified = true;
-            //_db.Entry<TEntity>(obj).State = EntityState.Modified; 
-            
+            //dbSet.Remove(obj);
+            dbSet.Update(obj);
+
+           // _db.Entry(obj).State = EntityState.Detached;  
+            //_db.Entry(obj).Property("Nome").IsModified = true;
+            //dbSet.Attach(obj);
+            //_db.Entry(obj).State = EntityState.Modified;
             //dbSet.Update(obj);
-            _db.Update(obj);
+            //_db.Set<TEntity>().Update(obj);
             _db.SaveChanges();
            
         }

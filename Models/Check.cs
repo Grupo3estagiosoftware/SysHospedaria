@@ -21,10 +21,10 @@ namespace ProjetoNugets.Models
         [ForeignKey("ReservaId")]
         public Reserva Reserva { get; set; }
 
-        [Required]
-        public int FuncionarioId { get; set; }
+        //[Required]
+        //public int FuncionarioId { get; set; }
 
-        [ForeignKey("FuncionarioId")]
-        public Funcionario Funcionario { get; set; }
+        //[ForeignKey("FuncionarioId")]
+        //public Funcionario Funcionario { get; set; }
     }
 }

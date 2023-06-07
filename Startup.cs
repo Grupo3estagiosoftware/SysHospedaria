@@ -29,8 +29,13 @@ namespace ProjetoNugets
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("ClienteDBConnection")));
-            
+            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("ClienteDBConnection")));
+
+            services.AddDbContextPool<AppDbContext>(options =>
+            {
+                options.UseSqlServer(_config.GetConnectionString("ClienteDBConnection"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
             services.AddTransient<IHospedeRepository, HospedeRepository>();
             services.AddTransient<ICargoRepository, CargoRepository>();
             services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
@@ -67,6 +72,7 @@ namespace ProjetoNugets
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

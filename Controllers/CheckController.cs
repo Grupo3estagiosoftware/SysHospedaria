@@ -19,10 +19,16 @@ namespace ProjetoNugets.Controllers
         {
             _Check = Check;
         }
-        public IActionResult Index()
+        public IActionResult Checkin()
         {
-            var CheckResult = _Check.GetAll();
-            return View(CheckResult);
+            var CheckResult = _Check.GetAll(includeProperties: "Reserva,Reserva.Hospede,Reserva.Quarto").Where(e=>e.Checkin && e.Chechout == false).ToList();
+            return View("Checkin",CheckResult);
+        }
+
+        public IActionResult Checkout()
+        {
+            var CheckResult = _Check.GetAll(includeProperties: "Reserva,Reserva.Hospede,Reserva.Quarto").Where(e => e.Chechout).ToList();
+            return View("Checkout", CheckResult);
         }
 
         public IActionResult Create()
@@ -70,7 +76,7 @@ namespace ProjetoNugets.Controllers
             return View(Check);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult DeleteCheck(int id)
         {
             var resultCheck = _Check.Get(id);
             if(resultCheck==null)
@@ -79,7 +85,7 @@ namespace ProjetoNugets.Controllers
             }
 
             _Check.Remove(resultCheck);
-            return RedirectToAction("Index");
+            return RedirectToAction("Checkout");
         }
 
     }

@@ -425,3 +425,7 @@ C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Projeto
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Create.cshtml.g.cs
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Edit.cshtml.g.cs
 C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Index.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Checkout\Details.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Check\Create.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Check\Checkin.cshtml.g.cs
+C:\Users\Nelson João\Source\Repos\SysHospedaria\obj\Debug\netcoreapp3.1\Razor\Views\Check\Checkout.cshtml.g.cs

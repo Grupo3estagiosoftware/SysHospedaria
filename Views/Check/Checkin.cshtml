@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Reserva>
+﻿@model IEnumerable<Check>
 
     @{
     ViewData["Title"] = "Privacy Policy";
@@ -8,12 +8,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-9">
-                    <h1>Todas as reservas</h1>
+                    <h1>Efectuar de checkin</h1>
                 </div>
-                <div class="col-sm-3 text-right">
-                    <a asp-controller="Reserva" asp-action="Create" class="btn btn-primary ">Adicionar</a>
-
-                </div>
+                
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -34,28 +31,31 @@
                                     <th>Id</th>
                                     <th>Data Entrada</th>
                                     <th>Data Saida</th>
+                                    <th>Valor</th>
                                     <th>Hospede</th>
-                                    <th>Quarto</th>
-                                    <th>Estado</th>
+                                    <th>Tipo Quarto</th>
+                                    <th>Data Registro</th>
                                     <th></th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach (Reserva item in Model)
+                                @foreach (Check item in Model)
                                 {
                                 <tr>
                                     <td>@item.Id</td>
-                                    <td>@item.DataEntrada</td>
-                                    <td>@item.DataSaida</td>
-                                    <td>@item.Hospede.Nome</td>
-                                    <td>@item.Quarto.Numero</td>
-                                    <td>@item.Estado</td>
+                                    <td>@item.Reserva.DataEntrada</td>
+                                    <td>@item.Reserva.DataSaida</td>
+                                    <td>@item.Valor</td>
+                                    <td>@item.Reserva.Hospede.Nome</td>
+                                    <td>@item.Reserva.Quarto.Tipo</td>
+                                    <td>@item.Data</td>
                                     <td>
-                                        <a asp-action="Edit" asp-controller="Reserva" asp-route-id="@item.Id" class="btn btn-success text-white">
-                                            <i class="fas fa-eye"></i>
+                                        <a asp-action="Checkout" asp-controller="Reserva" asp-route-id="@item.Id" class="btn btn-success text-white">
+                                            <i class="fas fa-arrow-right"></i>Checkout
                                         </a>
-                                        <a asp-action="Delete" asp-controller="Reserva" asp-route-id="@item.Id" class="btn btn-danger text-white">
+                                   
+                                        <a asp-action="DeleteCheck" asp-controller="Check" asp-route-id="@item.Id" class="btn btn-danger text-white">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>

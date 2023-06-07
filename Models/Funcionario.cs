@@ -20,7 +20,7 @@ namespace ProjetoNugets.Models
         public string Telefone { get; set; }
         public string Enderco { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Selecionar cargo")]
         public int CargoId { get; set; }
 
         [ForeignKey("CargoId")]
